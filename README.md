@@ -1,7 +1,4 @@
-# Learning INR for Event-guided Rolling Shutter Frame Correction, Deblur, and Interpolation
-
-Paper: https://arxiv.org/abs/2305.15078
+# UniINR: Event-guided Unified Rolling Shutter Correction, Deblurring, and Interpolation
 
 Video Demo: [https://www.youtube.com/watch?v=Zfx9jBkSZmg](https://youtu.be/Zfx9jBkSZmg)
 
-Our code and data will be made available with the permission of our sponsors.
