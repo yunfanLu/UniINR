@@ -13,7 +13,7 @@ Our framework, UniINR, is aimed at enhancing video quality by addressing key cha
 
 ## Pre-trained Models and Logs
 
-For quicker experiments, we provide pre-trained models along with their visualization results and log files. Access them through the provided download links, which should assist in replication and further experiments.
+For quicker experiments, we provide pre-trained models along with their visualization results and log files. Access them through the provided download links, which should assist in replication and further experiments. Release Link: [OneDrive](https://hkustgz-my.sharepoint.com/:f:/g/personal/ylu066_connect_hkust-gz_edu_cn/EjTW8WAmm1lMuUfboSyD-NMBxhc0zPyzxZK453JK7JmuoA?e=rsh6Cs)
 
 ## Dataset
 
@@ -71,3 +71,11 @@ If you find UniINR helpful in your research, please consider citing our paper:
     booktitle = {European Conference on Computer Vision (ECCV)},
     year = {2024},
 }
+```
+
+## Acknowledgements
+
+We would like to thank the authors of the following works for making their datasets available, which greatly facilitated our research:
+
+- **DeepUnrollNet** ([GitHub Link](https://github.com/ethliup/DeepUnrollNet))
+- **EvUnroll** ([GitHub Link](https://github.com/zxyemo/EvUnroll))
