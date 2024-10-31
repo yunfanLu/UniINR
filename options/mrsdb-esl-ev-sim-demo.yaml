@@ -1,0 +1,75 @@
+JOBS: 12
+TEST_ONLY: False
+LOG_INTERVAL: 10
+TRAIN_BATCH_SIZE: 1
+VAL_BATCH_SIZE: 1
+START_EPOCH: 0
+END_EPOCH: 500
+VAL_INTERVAL: 1
+MODEL_SANING_INTERVAL: 20
+MIX_PRECISION: true
+RESUME:
+  PATH:
+  TYPE:
+  SET_EPOCH: true
+LAUNCHER: "ParallelLaunch"
+SEED: 9527
+IS_CUDA: true
+OPTIMIZER:
+  NAME: "Adam"
+  LR: 0.0001
+  LR_SCHEDULER: cosine
+  end_epoch: 500
+LOSS:
+  - NAME: global-shutter-sharp-reconstructed-loss
+    WEIGHT: 1
+METRICS:
+  - NAME: gs-sharp-psnr
+    input_is_linear: false
+  - NAME: gs-sharp-ssim
+    input_is_linear: false
+DATASET:
+  NAME: evunroll-simulated
+  root: "dataset/4-EvUnRoll-RS-Correction/"
+  events_moment: 52
+  crop_size:
+    - 360
+    - 360
+MODEL:
+  NAME: rsdb
+  image_channel: 3
+  coords_dim: 3
+  events_moment: 52
+  meta_type: "UNetCon1x1WithTheta"
+  encoder_name: "esl_backbone"
+  decoder_name: "conv1x1_learn_position_encoding"
+  inr_depth: 5
+  inr_in_channel: 256
+  inr_mid_channel: 256
+  image_height: 360
+  image_width: 360
+  rs_blur_timestamp: [0, 0.5, 0.5]
+  gs_sharp_count: 1
+  rs_integral: 1
+  intermediate_visualization: false
+  dcn_config:
+    groups:
+    offset_scale:
+    act_layer:
+    norm_layer:
+    dw_kernel_size:
+    center_feature_scale:
+  esl_config:
+    is_color: true
+    event_moments: 52
+    hidden_channels: 128
+    high_dim_channels: 256
+    is_deformable: false
+    loop: 25
+    has_scn_loop: false
+  correct_offset: true
+  time_embedding_type: CONCAT
+VISUALIZATION:
+  folder: ./visualize
+  tag: 0413
+  intermediate_visualization: false

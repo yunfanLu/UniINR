@@ -1,0 +1,87 @@
+JOBS: 6
+TEST_ONLY: False
+LOG_INTERVAL: 10
+TRAIN_BATCH_SIZE: 1
+VAL_BATCH_SIZE: 1
+START_EPOCH: 0
+END_EPOCH: 400
+VAL_INTERVAL: 1
+MODEL_SANING_INTERVAL: 5
+MIX_PRECISION: true
+RESUME:
+  PATH:
+  TYPE:
+  SET_EPOCH: true
+LAUNCHER: "ParallelLaunch"
+SEED: 9527
+IS_CUDA: true
+OPTIMIZER:
+  NAME: "Adam"
+  LR: 0.0001
+  LR_SCHEDULER: cosine
+  end_epoch: 400
+LOSS:
+  - NAME: global-shutter-sharp-reconstructed-loss
+    WEIGHT: 1
+  - NAME: rolling-shutter-blur-reconstructed-loss
+    WEIGHT: 0.05
+  - NAME: global-shutter-differential-reconstructed-loss
+    WEIGHT: 0.001
+    loss_type: l2
+METRICS:
+  - NAME: gs-sharp-psnr
+    input_is_linear: false
+  - NAME: gs-sharp-ssim
+    input_is_linear: false
+DATASET:
+  NAME: fastec-rolling-shutter-blur
+  root: "./dataset/2-Fastec-Simulated/"
+  blur_accumulate: 260
+  gs_sharp_frame_count: 9
+  events_moment: 52
+  center_cropped_height: 256
+  random_cropped_width: 256
+  is_color: false
+  gs_sharp_start_index: 0
+  gs_sharp_end_index: 520
+  calculate_in_linear_domain: false
+  event_for_gs_frame_buffer: 1
+  correct_offset: true
+MODEL:
+  NAME: rsdb
+  image_channel: 1
+  coords_dim: 3
+  events_moment: 52
+  meta_type: "UNetCon1x1WithTheta"
+  encoder_name: "esl_backbone"
+  decoder_name: "conv1x1_learn_position_encoding"
+  inr_depth: 5
+  inr_in_channel: 128
+  inr_mid_channel: 128
+  image_height: 256
+  image_width: 256
+  rs_blur_timestamp: [0, 0.5, 0.5]
+  gs_sharp_count: 9
+  rs_integral: 16
+  intermediate_visualization: false
+  dcn_config:
+    groups:
+    offset_scale:
+    act_layer:
+    norm_layer:
+    dw_kernel_size:
+    center_feature_scale:
+  esl_config:
+    is_color: false
+    event_moments: 52
+    hidden_channels: 64
+    high_dim_channels: 128
+    is_deformable: false
+    loop: 25
+    has_scn_loop: false
+  correct_offset: true
+  time_embedding_type: ADD
+VISUALIZATION:
+  folder: ./epoch-45
+  tag: 0413
+  intermediate_visualization: false
