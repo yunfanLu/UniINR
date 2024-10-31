@@ -1,4 +1,4 @@
-<h2 align="center"> <a href="https://arxiv.org/abs/2305.15078">UniINR: Event-guided Unified Rolling Shutter Correction, Deblurring, and Interpolation</a></h2>
+<h1 align="center"> <a href="https://arxiv.org/abs/2305.15078">UniINR: Event-guided Unified Rolling Shutter Correction, Deblurring, and Interpolation</a></h1>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
     
 UniINR is an advanced neural framework designed to handle rolling shutter correction, deblurring, and interpolation in a unified approach guided by event-based inputs. This repository provides the code, datasets, and pre-trained models for reproducing results from our ECCV 2024 paper.
