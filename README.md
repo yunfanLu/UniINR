@@ -30,7 +30,7 @@ Additionally, our training incorporates:
     - [Fastec Test Data](https://drive.google.com/open?id=1Yfu6sOgIa6vJ6VwAedycjLu-_7rx7vZ2)
 
 ### Simulating New Data
-For generating new rolling shutter and blurred datasets, use the following scripts:
+For generating new rolling shutter and blurred datasets, use the following scripts. Please note that both event simulation and rolling shutter simulation take the original high-frame-rate video as input.
 
 1. **Rolling Shutter Blurred Frames:**
    ```bash
