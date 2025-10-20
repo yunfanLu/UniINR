@@ -21,7 +21,8 @@ For quicker experiments, we provide pre-trained models along with their visualiz
 
 Our work is built on two primary datasets used for training and testing:
 1. **DeepUnrollNet Dataset** ([GitHub Link](https://github.com/ethliup/DeepUnrollNet))
-2. **EvUnroll Dataset** ([GitHub Link](https://github.com/zxyemo/EvUnroll))
+   - Since the original dataset might no longer be accessible, I provide [this backup link](https://huggingface.co/datasets/yunfanlu/UNIINR-Fastec-Simulated-Dataset/tree/main). 
+3. **EvUnroll Dataset** ([GitHub Link](https://github.com/zxyemo/EvUnroll))
 
 Additionally, our training incorporates:
 - **GEV Dataset:** Available for download on [Baidu](https://pan.baidu.com/s/1_tZxJBeLaznrI0UomsPh9A?pwd=evun#list/path=%2F)
